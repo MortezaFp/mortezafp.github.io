@@ -1,0 +1,209 @@
+body {
+  font-family: Montserrat;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+  transition: background 250ms ease;
+  background-color: white;
+}
+
+/* ! Size Slider */
+
+.field-title {
+  position: absolute;
+  top: -3px;
+  left: 150px;
+  transform: translateY(-50%);
+  font-weight: 800;
+  color: rgb(0, 0, 0);
+  font-size: 0.8rem;
+  pointer-events: none;
+  user-select: none;
+}
+
+.range__slider {
+  position: relative;
+  width: 100%;
+  height: 55px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.range__slider::after,
+.range__slider::before {
+  position: absolute;
+  color: rgb(0, 0, 0);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.range__slider::before {
+  content: "4";
+  left: 10px;
+}
+
+.range__slider::after {
+  content: "12";
+  right: 10px;
+}
+
+.range__slider .field-title::after {
+  content: attr(data-length);
+  position: absolute;
+  right: -16px;
+  color: rgb(0, 0, 0);
+}
+
+#slider {
+  -webkit-appearance: none;
+  width: calc(100% - (70px));
+  height: 2px;
+  border-radius: 5px;
+  background: rgba(23, 171, 240, 0.562);
+  outline: 0;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+/* ! Game */
+
+#game-score-status {
+  margin-top: 5%;
+}
+
+#game-status {
+  margin-bottom: 5%;
+}
+
+.game-grid-container {
+  display: grid;
+  grid-template-columns: 4% 20% 4% 20% 4% 20% 4% 20% 4%;
+  grid-template-rows: 4% 20% 4% 20% 4% 20% 4% 20% 4%;
+  width: 350px;
+  height: 350px;
+  margin: 5% auto;
+}
+
+.dot {
+  width: 100%;
+  height: 100%;
+  border-radius: 50px;
+  margin: auto;
+  background-color: rgb(83, 81, 81);
+  transition: background 250ms ease;
+}
+
+.line-horizontal {
+  height: 4%;
+  background-color: lightgray;
+  width: 90%;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: auto;
+  transition: background 250ms ease;
+}
+
+.line-vertical {
+  height: 90%;
+  width: 4%;
+  background-color: lightgray;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: auto;
+  transition: background 250ms ease;
+}
+
+.bg-red,
+.hover-red:hover {
+  background-color: rgb(255, 100, 131) !important;
+}
+
+.bg-blue,
+.hover-blue:hover {
+  background-color: rgb(136, 136, 253) !important;
+}
+
+.txt-red {
+  font-weight: bold;
+  color: rgb(255, 100, 131);
+}
+
+.txt-blue {
+  font-weight: bold;
+  color: rgb(136, 136, 253);
+}
+.box {
+  width: 90%;
+  height: 90%;
+  display: flex;
+  margin: auto;
+}
+
+/* ! Dark Mode */
+
+.dark-mode {
+  background-color: rgb(26, 26, 26);
+  color: white;
+}
+
+.dark-mode .field-title,
+.dark-mode .range__slider::after,
+.dark-mode .range__slider::before,
+.dark-mode .field-title::after {
+  color: white;
+}
+
+.dark-mode .line-horizontal,
+.dark-mode .line-vertical {
+  background: rgba(211, 211, 211, 0.3);
+}
+
+.dark-mode .dot {
+  background: rgb(216, 216, 216);
+}
+.toggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.toggle span {
+  font-size: 15px;
+  margin: 0 5px;
+}
+.toggle input[type="checkbox"] {
+  display: none;
+}
+.toggle input[type="checkbox"]:checked + label {
+  background: rgb(99, 89, 143);
+}
+.toggle input[type="checkbox"]:checked + label:after {
+  left: calc(100% - 2px);
+  transform: translateX(-100%);
+}
+.toggle label {
+  cursor: pointer;
+  width: 55px;
+  height: 25px;
+  background: rgba(0, 0, 0, 0.27);
+  display: block;
+  border-radius: 40px;
+  position: relative;
+}
+.toggle label:after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 21px;
+  height: 21px;
+  background: #fff;
+  border-radius: 40px;
+  transition: 0.3s;
+}
